@@ -100,7 +100,7 @@ class FlowSession(DefaultSession):
 
         flow.add_packet(packet, direction)
 
-        if self.packets_count % 10000 == 0 or (flow.duration > 120 and self.output_mode == 'flow'):
+        if self.packets_count % 30000 == 0 or (flow.duration > 10000 and self.output_mode == 'flow'):
             print('Packet count: {}'.format(self.packets_count))
             self.garbage_collect(packet.time)
 

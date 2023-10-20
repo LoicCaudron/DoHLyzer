@@ -113,7 +113,7 @@ class Flow:
             self.start_timestamp = packet.time
 
     def is_doh(self) -> bool:
-        return self.src_ip in constants.DOH_IPS or self.dest_ip in constants.DOH_IPS
+        return self.src_ip in constants.DOH_IPS or self.dest_ip in constants.DOH_IPS or self.src_ip in constants.LOCAL_DOH_IPS or self.dest_ip in constants.LOCAL_DOH_IPS
 
     @property
     def duration(self):
